@@ -1,0 +1,18 @@
+.Ingreso{
+    height: 350px;
+    width: 400px;
+    margin-top: 150px;
+    border: 2px black solid;
+    border-radius: 5px;
+    
+
+
+}
+.mb-3{
+    margin-top: 7%;
+    width: 300px;
+}
+.Errores{
+    font-size: 10px;
+    color: red;
+}
