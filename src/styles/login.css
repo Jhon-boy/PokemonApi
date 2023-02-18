@@ -16,3 +16,11 @@
     font-size: 10px;
     color: red;
 }
+.NewCount {
+    color: rgb(100, 98, 98);
+
+}
+.NewCount:hover{
+    cursor: pointer;
+    color: black;
+}

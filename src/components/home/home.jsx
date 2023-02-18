@@ -1,8 +1,11 @@
 import React from 'react';
+import Footer from './footer';
 
 const Home = () => {
+
     return (
-        <div>
+        <div>          
+                <Footer></Footer>
             BIENVENIDO 
         </div>
     );
