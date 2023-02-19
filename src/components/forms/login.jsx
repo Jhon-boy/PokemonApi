@@ -1,14 +1,13 @@
 
 import React, { useState } from 'react';
-import '../styles/login.css';
+import '../../styles/login.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
-import app from '../server/firebase';
-import { getAuth,  signInWithEmailAndPassword } from 'firebase/auth'
+import app from '../../server/firebase';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 import { Link } from 'react-router-dom';
-
-
 import * as Yup from 'yup'
+import {useHistory} from 'react-router-dom'
 
 const auth = getAuth(app)
 const loginSchema = Yup.object().shape(
@@ -27,6 +26,10 @@ const CredencialesInicial = {
 //Props
 
 const Login = (props) => {
+    const history = useHistory();
+    const navigateTo= (path) =>{
+        history.push(path);
+    }
 
 
     const iniciarSesion = async (e) => {
@@ -38,7 +41,7 @@ const Login = (props) => {
             localStorage.setItem('credentials', auth);
         } catch (error) {
             alert('Correo o contraseña Invalido');
-        }       
+        }
     }
     return (
         <div>
@@ -91,7 +94,7 @@ const Login = (props) => {
                                         (
                                             ( //Mostramos el error en caso de ser invalido con un DIV
 
-                                                <ErrorMessage name='password'  className='Errores' component='div'></ErrorMessage>
+                                                <ErrorMessage name='password' className='Errores' component='div'></ErrorMessage>
 
                                             )
                                         )
@@ -101,9 +104,7 @@ const Login = (props) => {
                                 <button type='submit' className='btn btn-primary mb-3'>Ingresar</button>
                                 {isSubmitting ? (<p>Sending....</p>) : null}
                                 <br></br>
-                                     <span className='NewCount'>Crear Cuenta</span> 
-    
-                              
+                                <span  className='NewCount' onClick={() => navigateTo('/register')}> GO TO Register </span>
                             </div>
                         </center>
 
@@ -115,6 +116,7 @@ const Login = (props) => {
             </Formik>
 
         </div>
+        
     );
 }
 

@@ -1,7 +1,8 @@
 import React from 'react';
 import { getAuth, signOut } from "firebase/auth";
-import Login from '../../forms/login';
-
+import Login from '../forms/login';
+import '../../styles/home.css'
+import { Link } from 'react-router-dom';
 const logOut = () => {
     const auth = getAuth();
     signOut(auth).then(() => {
@@ -14,10 +15,18 @@ const logOut = () => {
 
 const Footer = () => {
     return (
-        <div>
-        
-            <button onClick={logOut}>Log Out</button>
-        </div>
+        <nav>
+            <ul className='nav-list'>
+                <Link to={"/"}>
+                    <li> Home</li>
+                </Link>
+                <Link to={"/register"}>
+                    <li>Register</li>
+                </Link>
+                <button onClick={logOut}>Log Out</button>
+            </ul>
+
+        </nav>
     );
 }
 
