@@ -28,25 +28,33 @@ function App() {
         {/* Login Route */}
         <Route exact path='/'>
           {
-            usuario ? 
-            <Home correoUsuario={usuario.email} />
-            : 
-            <Login></Login>
+            usuario ?
+              <Redirect from='/' to='/homr' />
+              :
+              <Redirect from='/' to='/login' />
           }
         </Route>
         {/* Dashboard Route */}
-        <Route  exact path='/login'>
-        {
+        <Route exact path='/login'>
+          {
             usuario ?
-            <Home correoUsuario={usuario.email} />
-            : 
-            <Login></Login>
+              <Home correoUsuario={usuario.email} />
+              :
+              <Login></Login>
           }
         </Route>
-        <Route  exact path='/home' component={Home}/>
-         
-        <Route exact path='/register' component={CreateCount}/>
-        <Route component={Error}/>
+        {/* <Route  exact path='/home' component={Home}/> */}
+        <Route exact path='/home'>
+          {
+            usuario ?
+              <Home correoUsuario={usuario.email} />
+              :
+              <Login></Login>
+          }
+        </Route>
+
+        <Route exact path='/register' component={CreateCount} />
+        <Route component={Error} />
       </Switch>
     </Router>
 

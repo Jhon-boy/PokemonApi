@@ -5,7 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import app from '../../server/firebase';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
-import { Link } from 'react-router-dom';
 import * as Yup from 'yup'
 import {useHistory} from 'react-router-dom'
 
@@ -104,7 +103,7 @@ const Login = (props) => {
                                 <button type='submit' className='btn btn-primary mb-3'>Ingresar</button>
                                 {isSubmitting ? (<p>Sending....</p>) : null}
                                 <br></br>
-                                <span  className='NewCount' onClick={() => navigateTo('/register')}> GO TO Register </span>
+                                <span  className='NewCount' onClick={() => navigateTo('/register')}> ¿No tienes Cuenta? Crea una! </span>
                             </div>
                         </center>
 
