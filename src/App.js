@@ -29,7 +29,7 @@ function App() {
         <Route exact path='/'>
           {
             usuario ?
-              <Redirect from='/' to='/homr' />
+              <Redirect from='/' to='/home' />
               :
               <Redirect from='/' to='/login' />
           }
