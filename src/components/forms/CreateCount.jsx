@@ -29,7 +29,6 @@ const CreateCount = () => {
         {
             usuario: Yup.string()
                 .min(3, 'Usuario muy corto ')
-                .max(12, 'Username muy largo')
                 .required('Campo Obligatorio'),
             apellido: Yup.string()
                 .required('Campo Obligatorio'),

@@ -8,6 +8,7 @@ import Login from './components/forms/login';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import CreateCount from './components/forms/CreateCount';
 import Error from './components/pages/404Error/Error'
+import PokemonCard from './components/pages/PokemonCard';
 const auth = getAuth(app);
 
 function App() {

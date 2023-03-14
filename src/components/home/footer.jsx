@@ -13,7 +13,9 @@ const logOut = () => {
     });
 }
 
+
 const Footer = () => {
+
     return (
         <nav>
             <ul className='nav-list'>
